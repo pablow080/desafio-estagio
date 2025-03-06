@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../services/cliente.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
+import {Cliente} from '../models/cliente.model';
 
 @Component({
   selector: 'app-cliente-list',
@@ -21,8 +22,13 @@ export class ClienteListComponent implements OnInit {
   }
 
   carregarClientes(): void {
-    this.clienteService.listarClientes().subscribe((clientes : any) : void => {
-      this.clientes = clientes;
+    this.clienteService.listarClientes().subscribe({
+      next: (clientes : any) => {
+        this.clientes = clientes;
+      },
+      error: (err: any) => {
+        console.error('Erro ao carregar clientes:', err);
+      }
     });
   }
 
@@ -36,13 +42,19 @@ export class ClienteListComponent implements OnInit {
       if (result) {
         this.clienteService.excluirCliente(id).subscribe({
           next: () => {
+            console.log('Cliente excluído com sucesso!');
             this.carregarClientes(); // Recarrega a lista após exclusão
           },
-          error: (err : any): void => {
+          error: (err: any) => {
             console.error('Erro ao excluir cliente:', err);
+            alert('Ocorreu um erro ao excluir o cliente. Tente novamente.');
           }
         });
       }
     });
+  }
+
+  editarCliente(cliente: Cliente) {
+
   }
 }
