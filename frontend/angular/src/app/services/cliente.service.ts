@@ -15,6 +15,8 @@ export class ClienteService {
     listarClientes(): Observable<Cliente[]> {
         return this.http.get<Cliente[]>(this.apiUrl);
     }
-
+    criarCliente(cliente: Cliente): Observable<Cliente> {
+        return this.http.post<Cliente>(this.apiUrl, cliente);
+    }
     // (criar, editar, excluir)
 }
