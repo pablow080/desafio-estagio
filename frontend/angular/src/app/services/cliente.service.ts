@@ -8,6 +8,8 @@ import { Cliente } from '../models/cliente.model';
 })
 export class ClienteService {
     private apiUrl = 'http://localhost:8080/api/clientes';
+    selectedCliente: boolean | undefined;
+    private _cliente: any;
 
     constructor(private http: HttpClient) { }
 
@@ -19,4 +21,12 @@ export class ClienteService {
         return this.http.post<Cliente>(this.apiUrl, cliente);
     }
     // (criar, editar, excluir)
+    atualizarCliente(cliente: any) {
+        this._cliente = cliente;
+
+    }
+
+    excluirCliente(id: number) {
+
+    }
 }
