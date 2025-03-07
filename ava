@@ -1,1 +1,72 @@
 
+[07/03, 00:03] Henrique Uni: Exercicio 01.
+% Definir intervalo dos valores
+% Inico:incremento:fim
+t = 0: pi/64:6*pi;
+
+% Calculo de x y e z usando as equaçoes
+x = t .* cos(6*t);
+y = t .* sin(6*t);
+z = t;
+
+figure;
+% Subplot 1 - (x, y)
+subplot(2, 2, 1);
+plot(x, y, 'b-');
+title('Projeção (x, y) da Hélice');
+xlabel('x');g
+ylabel('y');
+grid on;
+
+figure;
+% Subplot 2 - (x, t)
+subplot(2, 2, 2);
+plot(x, t, 'r-');
+title('Projeção (x, t) da Hélice');
+xlabel('x');
+ylabel('t');
+
+figure;
+% Subplot 3 - (y, t)
+subplot(2, 2, 3);
+plot(y, t, 'g-');
+title('Projeção (y, t) da Hélice');
+ylabel('y');
+xlabel('t');
+
+set(gcf, 'Position', [100, 100, 800, 600]);
+[07/03, 00:03] Henrique Uni: Exercício 02.
+
+% Definir o intervalo
+theta = 0:pi/32:8*pi;
+
+% Cálculo de 'r'
+r = exp(sin(theta)) - 2*cos(4*theta) - sin(5*((20*theta - pi)/24));
+
+figure;
+polar(theta, r, 'g-');
+
+title('Curva da borboleta em equações Polares');
+grid on;
+
+set(gcf, 'Position', [100, 100, 600, 600]);
+[07/03, 00:03] Henrique Uni: Exercicio 03.
+
+
+t_f = 32:3.6:93.2;
+
+t = (t_f - 32)*5/9;
+
+rho = 5.5289e-8 * t.^3 - 8.5016e-6 * t.^2 + 6.5622e-5 * t + 0.99987;
+
+
+figure;
+subplot(2, 2, 1);
+plot(t, rho, 'b-');
+title('Projeção (t, rho) da temperatura');
+xlabel('t');
+ylabel('rho');
+
+grid on;
+
+set(gcf, 'Position', [100, 100, 600, 600]);
