@@ -1,15 +1,15 @@
-package com.example.desafio.service;
+package com.desafio.service;
 
-import com.example.desafio.model.Cliente;
+import com.desafio.model.ClienteModel;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
 
 @Service
 public class RelatorioService {

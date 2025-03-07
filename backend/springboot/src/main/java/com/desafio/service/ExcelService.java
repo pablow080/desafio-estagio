@@ -1,6 +1,6 @@
 package com.example.desafio.service;
 
-import com.example.desafio.model.Cliente;
+import com.desafio.model.ClienteModel;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;

@@ -1,3 +1,5 @@
+package com.desafio.controller;
+
 @RestController
 @RequestMapping("/api/clientes")
 public class ClienteController {
