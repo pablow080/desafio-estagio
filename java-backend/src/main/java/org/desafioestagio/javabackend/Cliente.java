@@ -1,10 +1,10 @@
+package org.desafioestagio.javabackend;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Data;
 import java.util.Date;
 import java.util.List;
 
-@Data
 @Entity
 public class Cliente {
     @Id

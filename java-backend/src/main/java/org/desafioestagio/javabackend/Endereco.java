@@ -1,8 +1,10 @@
+package org.desafioestagio.javabackend;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
 
-@Data
+
+
 @Entity
 public class Endereco {
     @Id
