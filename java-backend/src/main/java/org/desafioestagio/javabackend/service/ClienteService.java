@@ -1,34 +1,35 @@
-package org.desafioestagio.javabackend.controller;
+package org.desafioestagio.javabackend.service;
 
+import org.desafioestagio.javabackend.dao.ClienteDAO;
+import org.desafioestagio.javabackend.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 
-@RestController
-@RequestMapping("/clientes")
-public class ClienteController {
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ClienteService {
+
     @Autowired
-    private ClienteRepository clienteRepository;
+    private ClienteDAO clienteDAO;
 
     // Listar todos os clientes
     public List<Cliente> listarClientes() {
-        return clienteRepository.findAll();
+        return clienteDAO.listarClientes();
     }
 
-    // Salvar um novo cliente
+    // Salvar ou atualizar um cliente
     public Cliente salvarCliente(Cliente cliente) {
         if (cliente == null) {
             throw new IllegalArgumentException("O cliente não pode ser nulo");
         }
-        // Exemplo de validação simples
-        if (clienteRepository.existsById(cliente.getId())) {
-            throw new IllegalArgumentException("Cliente com o ID " + cliente.getId() + " já existe");
-        }
-        return clienteRepository.save(cliente);
+        return clienteDAO.salvarCliente(cliente); // Chama o DAO para salvar o cliente
     }
 
     // Buscar cliente por ID
     public Cliente buscarClientePorId(Long id) {
-        Optional<Cliente> cliente = clienteRepository.findById(id);
+        Optional<Cliente> cliente = clienteDAO.buscarClientePorId(id);
         if (cliente.isPresent()) {
             return cliente.get();
         } else {
@@ -36,30 +37,24 @@ public class ClienteController {
         }
     }
 
-    // Atualizar um cliente existente
-    public Cliente atualizarCliente(Long id, Cliente clienteAtualizado) {
-        Optional<Cliente> clienteExistente = clienteRepository.findById(id);
-        if (!clienteExistente.isPresent()) {
-            throw new ClienteNaoEncontradoException("Cliente não encontrado com o ID " + id);
-        }
-        Cliente cliente = clienteExistente.get();
-        cliente.setNome(clienteAtualizado.getNome()); // Exemplo de atualização de campo
-        cliente.setEmail(clienteAtualizado.getEmail()); // Atualize os campos conforme necessário
-        // Outros campos a atualizar
-        return clienteRepository.save(cliente);
-    }
-
     // Excluir cliente por ID
     public void excluirCliente(Long id) {
-        Optional<Cliente> clienteExistente = clienteRepository.findById(id);
-        if (!clienteExistente.isPresent()) {
+        Optional<Cliente> clienteExistente = clienteDAO.buscarClientePorId(id);
+        if (clienteExistente.isEmpty()) {
             throw new ClienteNaoEncontradoException("Cliente não encontrado com o ID " + id);
         }
-        clienteRepository.deleteById(id);
+        clienteDAO.excluirCliente(id);
     }
 
-    // Exemplo de exceção personalizada para cliente não encontrado
+    // Método de validação de CPF (implementado)
+    public boolean validarCpf(String cpf) {
+        return cpf != null && cpf.matches("\\d{11}");
+    }
+
+    // Exceção personalizada para cliente não encontrado
     public static class ClienteNaoEncontradoException extends RuntimeException {
         public ClienteNaoEncontradoException(String message) {
             super(message);
+        }
+    }
 }
