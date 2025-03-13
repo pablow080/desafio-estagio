@@ -1,0 +1,28 @@
+<html lang="pt-br" >
+<meta charset="utf-8">
+<mat-radio-group [(ngModel)]="tipoPessoa">
+  <mat-radio-button value="fisica">Pessoa Física</mat-radio-button>
+  <mat-radio-button value="juridica">Pessoa Jurídica</mat-radio-button>
+</mat-radio-group>
+
+<div *ngIf="tipoPessoa === 'fisica'">
+  <mat-form-field>
+    <mat-label>CPF &nbsp</mat-label>
+    <input matInput [(ngModel)]="cpf" mask="000.000.000-00">
+  </mat-form-field>
+</div>
+
+<div *ngIf="tipoPessoa === 'juridica'">
+  <mat-form-field>
+    <mat-label>CNPJ</mat-label>
+    <input matInput [(ngModel)]="cnpj" mask="00.000.000/0000-00">
+  </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label>CEP &nbsp</mat-label>
+<input matInput [(ngModel)]="cep" mask="00000-000">
+  </mat-form-field>
+</div>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Cliente</title>
+</head>
+<body>
+<h2>Cadastro de Cliente</h2>
+
+<form wicket:id="clienteForm">
+  <label for="nome">Nome:</label>
+  <input type="text" wicket:id="nome" id="nome"/><br/>
+
+  <label for="tipoPessoa">Tipo de Pessoa:</label>
+  <input type="text" wicket:id="tipoPessoa" id="tipoPessoa"/><br/>
+
+  <label for="cpfCnpj">CPF/CNPJ:</label>
+  <input type="text" wicket:id="cpfCnpj" id="cpfCnpj"/><br/>
+
+  <label for="email">E-mail:</label>
+  <input type="text" wicket:id="email" id="email"/><br/>
+
+  <button wicket:id="salvar">Salvar</button>
+
+  <a wicket:id="gerarRelatorio">Gerar Relatório</a>
+</form>
+
+<div wicket:id="feedback"></div>
+</body>
+</html>

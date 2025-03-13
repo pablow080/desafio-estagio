@@ -3,8 +3,6 @@ package org.desafioestagio.javabackend;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
-
-
 @Entity
 public class Endereco {
     @Id
