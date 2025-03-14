@@ -41,12 +41,17 @@ public class JasperReportService {
 
             // Carregar o template .jrxml
             Resource resource = resourceLoader.getResource("classpath:reports/ClienteReport.jrxml");
+            if (!resource.exists()) {
+                throw new Exception("O template de relatório não foi encontrado: " + resource.getDescription());
+            }
+
             try (InputStream reportStream = resource.getInputStream()) {
                 JasperReport jasperReport = JasperCompileManager.compileReport(reportStream);
 
                 // Parâmetros do relatório (caso precise passar mais parâmetros)
                 Map<String, Object> parametros = new HashMap<>();
                 parametros.put("TITULO", "Relatório de Clientes");
+                // Adicionar outros parâmetros, se necessário
 
                 // Preencher relatório com os dados
                 JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, dataSource);

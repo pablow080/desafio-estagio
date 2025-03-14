@@ -2,9 +2,24 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="jaspersoft-repo" />
+      <option name="name" value="jaspersoft-repo" />
+      <option name="url" value="https://repository.jaspersoft.com" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jr-ce-releases" />
+      <option name="name" value="jr-ce-releases" />
+      <option name="url" value="https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jaspersoft-repo" />
+      <option name="name" value="jaspersoft-repo" />
+      <option name="url" value="https://jaspersoft.jfrog.io/artifactory/jaspersoft-repo" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -12,9 +27,54 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="apache-wicket" />
+      <option name="name" value="apache-wicket" />
+      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="itext-repo" />
+      <option name="name" value="itext-repo" />
+      <option name="url" value="https://maven.itextpdf.com/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jaspersoft-repo" />
+      <option name="name" value="jaspersoft-repo" />
+      <option name="url" value="https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jfrog-repo" />
+      <option name="name" value="jfrog-repo" />
+      <option name="url" value="https://jfrog.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-repo" />
+      <option name="name" value="spring-repo" />
+      <option name="url" value="https://repo.spring.io/release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com" />
     </remote-repository>
   </component>
 </project>

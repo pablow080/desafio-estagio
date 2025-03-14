@@ -1,48 +1,70 @@
 package org.desafioestagio.javabackend.service;
 
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 import org.desafioestagio.javabackend.model.Cliente;
-import org.desafioestagio.javabackend.dao.ClienteDAO;
 import org.desafioestagio.javabackend.model.TipoPessoa;
+import org.desafioestagio.javabackend.repository.ClienteRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ClienteServiceTest {
 
     @Mock
-    private ClienteDAO clienteDAO; // Mock de ClienteDAO, não ClienteRepository
+    private ClienteRepository clienteRepository;
 
     @InjectMocks
-    private ClienteService clienteService; // ClienteService é a classe que está sendo testada
+    private ClienteService clienteService;
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.openMocks(this); // Inicializa os mocks
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
     public void testCreateCliente() {
-        // Criando um cliente com o tipo correto (usando o enum)
         Cliente cliente = new Cliente(TipoPessoa.FISICA, "12345678901", "John Doe", "john.doe@example.com");
 
-        // Configurando o comportamento do mock
-        when(clienteDAO.salvarCliente(cliente)).thenReturn(cliente);
+        when(clienteRepository.save(cliente)).thenReturn(cliente);
 
-        // Chama o método de serviço
-        Cliente savedCliente = clienteService.salvarCliente(cliente); // Usando salvarCliente no lugar de save
+        Cliente savedCliente = clienteService.salvar(cliente);
 
-        // Validações
-        assertNotNull(savedCliente); // Verifica que o cliente não é nulo
-        assertEquals(cliente.getNome(), savedCliente.getNome()); // Verifica se o nome é o mesmo
-        verify(clienteDAO).salvarCliente(cliente); // Verifica que salvarCliente foi chamado no DAO
+        assertNotNull(savedCliente);
+        assertEquals(cliente.getNome(), savedCliente.getNome());
+        verify(clienteRepository).save(cliente);
     }
 
     @Test
     public void testValidarCpf() {
-        // Teste para validar CPF
-        assertTrue(clienteService.validarCpf("12345678901"));
-        assertFalse(clienteService.validarCpf("00000000000"));
+        // Teste com CPF válido
+        assertTrue(clienteService.validarCpf("12345678901"));  // CPF válido de exemplo (este deve ser um CPF válido real)
+
+        // Teste com CPF inválido (todos zeros, por exemplo)
+        assertFalse(clienteService.validarCpf("00000000000"));  // CPF inválido (todos zeros)
+
+        // Teste com CPF válido com formatação
+        assertTrue(clienteService.validarCpf("123.456.789-01"));  // CPF válido com formatação
+
+        // Teste com CPF inválido com formatação
+        assertFalse(clienteService.validarCpf("111.111.111-11"));  // CPF inválido, todos os números iguais
+    }
+
+    @Test
+    public void testValidarCnpj() {
+        // Teste com CNPJ válido
+        assertTrue(clienteService.validarCnpj("12345678000195"));  // CNPJ válido de exemplo (este deve ser um CNPJ válido real)
+
+        // Teste com CNPJ inválido (todos zeros, por exemplo)
+        assertFalse(clienteService.validarCnpj("00000000000000"));  // CNPJ inválido (todos zeros)
+
+        // Teste com CNPJ válido com formatação
+        assertTrue(clienteService.validarCnpj("12.345.678/0001-95"));  // CNPJ válido com formatação
+
+        // Teste com CNPJ inválido com formatação
+        assertFalse(clienteService.validarCnpj("11.111.111/1111-11"));  // CNPJ inválido, todos os números iguais
     }
 }

@@ -1,60 +1,75 @@
 package org.desafioestagio.javabackend.service;
 
-import org.desafioestagio.javabackend.dao.ClienteDAO;
 import org.desafioestagio.javabackend.model.Cliente;
+import org.desafioestagio.javabackend.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 @Service
 public class ClienteService {
 
     @Autowired
-    private ClienteDAO clienteDAO;
+    private ClienteRepository clienteRepository;
 
-    // Listar todos os clientes
-    public List<Cliente> listarClientes() {
-        return clienteDAO.listarClientes();
+    public List<Cliente> listarTodos() {
+        return clienteRepository.findAll();
     }
 
-    // Salvar ou atualizar um cliente
-    public Cliente salvarCliente(Cliente cliente) {
-        if (cliente == null) {
-            throw new IllegalArgumentException("O cliente não pode ser nulo");
+    public Optional<Cliente> buscarPorId(Long id) {
+        return clienteRepository.findById(id);
+    }
+
+    public Cliente salvar(Cliente cliente) {
+        String cpfCnpj = cliente.getCpfCnpj();  // Supondo que o CPF ou CNPJ está armazenado em getCpfCnpj()
+
+        if (!validarCpfCnpj(cpfCnpj)) {
+            throw new IllegalArgumentException("CPF ou CNPJ inválido.");
         }
-        return clienteDAO.salvarCliente(cliente); // Chama o DAO para salvar o cliente
-    }
 
-    // Buscar cliente por ID
-    public Cliente buscarClientePorId(Long id) {
-        Optional<Cliente> cliente = clienteDAO.buscarClientePorId(id);
-        if (cliente.isPresent()) {
-            return cliente.get();
-        } else {
-            throw new ClienteNaoEncontradoException("Cliente não encontrado com o ID " + id);
-        }
-    }
-
-    // Excluir cliente por ID
-    public void excluirCliente(Long id) {
-        Optional<Cliente> clienteExistente = clienteDAO.buscarClientePorId(id);
-        if (clienteExistente.isEmpty()) {
-            throw new ClienteNaoEncontradoException("Cliente não encontrado com o ID " + id);
-        }
-        clienteDAO.excluirCliente(id);
-    }
-
-    // Método de validação de CPF (implementado)
-    public boolean validarCpf(String cpf) {
-        return cpf != null && cpf.matches("\\d{11}");
-    }
-
-    // Exceção personalizada para cliente não encontrado
-    public static class ClienteNaoEncontradoException extends RuntimeException {
-        public ClienteNaoEncontradoException(String message) {
-            super(message);
+        try {
+            return clienteRepository.save(cliente);
+        } catch (DataIntegrityViolationException e) {
+            // Tratar erros de violação de integridade (como dados duplicados)
+            throw new RuntimeException("Erro ao salvar cliente: " + e.getMessage(), e);
         }
     }
+
+
+    public void excluir(Long id) {
+        clienteRepository.deleteById(id);
+    }
+
+    private boolean validarCpfCnpj(String cpfCnpj) {
+        if (cpfCnpj == null || cpfCnpj.isEmpty()) {
+            return false;
+        }
+
+        // Se for um CPF (11 dígitos)
+        if (cpfCnpj.length() == 11) {
+            return validarCpf(cpfCnpj);
+        }
+
+        // Se for um CNPJ (14 dígitos)
+        if (cpfCnpj.length() == 14) {
+            return validarCnpj(cpfCnpj);
+        }
+
+        return false;  // Caso tenha um tamanho diferente de 11 ou 14, é inválido
+    }
+
+    boolean validarCpf(String cpf) {
+        // Implementação da validação de CPF
+        return cpf != null && cpf.matches("^[0-9]{11}$");
+    }
+
+    boolean validarCnpj(String cnpj) {
+        // Implementação da validação de CNPJ
+        return cnpj != null && cnpj.matches("^[0-9]{14}$");
+    }
+
 }

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:wicket="http://wicket.apache.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Home</title>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-br">
+<meta charset="UTF-8">
+<head style="background-color: mediumblue">
+    <title style="background: firebrick">Home - Sistema de Gestão</title>
 </head>
-<body>
-<!-- Aqui o Wicket vai injetar o conteúdo do componente Label -->
-<h1 wicket:id="message"></h1>
+<body style="background-color: lightskyblue">
+<h2>Bem-vindo ao Sistema de Gestão</h2>
+
+<div>
+    <!-- Botão para navegar para a página de Clientes -->
+    <button wicket:id="clientesButton" style="background-color: firebrick; color: aliceblue">lista de Clientes</button>
+</div>
+
+<div>
+    <!-- Botão para navegar para a página de Endereços -->
+    <button wicket:id="enderecosButton" style="background-color: mediumblue; color: aliceblue">lista de Endereços</button>
+</div>
+
+<div>
+    <!-- Botão para navegar para a página de Relatórios -->
+    <button wicket:id="relatorioButton" style="background-color: cadetblue">Relatórios</button>
+</div>
+
 </body>
 </html>

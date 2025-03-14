@@ -3,6 +3,7 @@ package org.desafioestagio.javabackend.controller;
 import jakarta.validation.Valid;
 import org.desafioestagio.javabackend.model.Endereco;
 import org.desafioestagio.javabackend.service.EnderecoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +23,9 @@ public class EnderecoController {
 
     // Buscar todos os endereços
     @GetMapping
-    public ResponseEntity<List<Endereco>> listarEnderecos() {
-        return ResponseEntity.ok(enderecoService.listarTodos());
+    public ResponseEntity<List<Endereco>> listarTodosEnderecos() {
+        List<Endereco> enderecos = enderecoService.listarTodos();
+        return new ResponseEntity<>(enderecos, HttpStatus.OK);
     }
 
     // Buscar um endereço por ID

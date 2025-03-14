@@ -3,9 +3,9 @@ package org.desafioestagio.javabackend.dao;
 import org.desafioestagio.javabackend.model.Endereco;
 import org.springframework.stereotype.Repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 

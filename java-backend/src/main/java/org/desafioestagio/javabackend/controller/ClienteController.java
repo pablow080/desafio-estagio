@@ -1,47 +1,81 @@
 package org.desafioestagio.javabackend.controller;
 
 import org.desafioestagio.javabackend.model.Cliente;
+import org.desafioestagio.javabackend.model.Endereco;
 import org.desafioestagio.javabackend.service.ClienteService;
+import org.desafioestagio.javabackend.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/clientes")
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
 
-    // Listar todos os clientes
+    @Autowired
+    private EnderecoService enderecoService;
+
+    // Endpoint para listar todos os clientes
     @GetMapping
-    public List<Cliente> listarClientes() {
-        return clienteService.listarClientes();
+    public ResponseEntity<List<Cliente>> listarTodos() {
+        List<Cliente> clientes = clienteService.listarTodos();
+        return new ResponseEntity<>(clientes, HttpStatus.OK);
     }
 
-    // Salvar um novo cliente
-    @PostMapping
-    public Cliente salvarCliente(@RequestBody Cliente cliente) {
-        return clienteService.salvarCliente(cliente);
-    }
-
-    // Buscar cliente por ID
+    // Endpoint para buscar cliente por id
     @GetMapping("/{id}")
-    public Cliente buscarClientePorId(@PathVariable Long id) {
-        return clienteService.buscarClientePorId(id);
+    public ResponseEntity<Cliente> buscarPorId(@PathVariable Long id) {
+        Optional<Cliente> cliente = clienteService.buscarPorId(id);
+        return cliente.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
-    // Atualizar um cliente
+    // Endpoint para salvar cliente
+    @PostMapping
+    public ResponseEntity<Cliente> salvar(@RequestBody Cliente cliente) {
+        Cliente clienteSalvo = clienteService.salvar(cliente);
+        return new ResponseEntity<>(clienteSalvo, HttpStatus.CREATED);
+    }
+
+    // Endpoint para atualizar cliente
     @PutMapping("/{id}")
-    public Cliente atualizarCliente(@PathVariable Long id, @RequestBody Cliente clienteAtualizado) {
-        clienteAtualizado.setId(id);
-        return clienteService.salvarCliente(clienteAtualizado);
+    public ResponseEntity<Cliente> atualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
+        Optional<Cliente> clienteExistente = clienteService.buscarPorId(id);
+        if (clienteExistente.isPresent()) {
+            cliente.setId(id);
+            Cliente clienteAtualizado = clienteService.salvar(cliente);
+            return ResponseEntity.ok(clienteAtualizado);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    // Excluir cliente
+    // Endpoint para excluir cliente
     @DeleteMapping("/{id}")
-    public void excluirCliente(@PathVariable Long id) {
-        clienteService.excluirCliente(id);
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+        Optional<Cliente> clienteExistente = clienteService.buscarPorId(id);
+        if (clienteExistente.isPresent()) {
+            clienteService.excluir(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    // Endpoint para adicionar um endereço a um cliente
+    @PostMapping("/{clienteId}/enderecos")
+    public ResponseEntity<Endereco> adicionarEndereco(@PathVariable Long clienteId, @RequestBody Endereco endereco) {
+        Optional<Cliente> cliente = clienteService.buscarPorId(clienteId);
+        if (cliente.isPresent()) {
+            endereco.setCliente(cliente.get());
+            Endereco enderecoSalvo = enderecoService.salvar(endereco);  // Chama o método correto
+            return new ResponseEntity<>(enderecoSalvo, HttpStatus.CREATED);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

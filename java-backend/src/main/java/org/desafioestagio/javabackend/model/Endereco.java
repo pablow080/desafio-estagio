@@ -1,8 +1,9 @@
 package org.desafioestagio.javabackend.model;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+
+import javax.persistence.*;
 
 @Entity
 public class Endereco {
@@ -22,6 +23,9 @@ public class Endereco {
     private String cep;
 
     private String bairro;
+
+    // Validação de telefone
+    @Pattern(regexp = "\\(\\d{2}\\) \\d{4,5}-\\d{4}", message = "Telefone inválido")
     private String telefone;
 
     private String cidade;
@@ -115,12 +119,6 @@ public class Endereco {
     }
 
     public void setEnderecoPrincipal(boolean enderecoPrincipal) {
-        if (enderecoPrincipal) {
-            // Verifica se já existe um endereço principal para o cliente
-            if (cliente.getEnderecos().stream().anyMatch(Endereco::isEnderecoPrincipal)) {
-                throw new IllegalStateException("Já existe um endereço principal para este cliente.");
-            }
-        }
         this.enderecoPrincipal = enderecoPrincipal;
     }
 

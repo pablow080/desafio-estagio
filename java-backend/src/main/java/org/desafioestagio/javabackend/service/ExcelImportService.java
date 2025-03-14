@@ -4,65 +4,56 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.desafioestagio.javabackend.model.Cliente;
 import org.desafioestagio.javabackend.model.TipoPessoa;
+
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelImportService {
 
     public List<Cliente> importarClientesDeExcel(InputStream fileInputStream) throws Exception {
         List<Cliente> clientes = new ArrayList<>();
-        Workbook workbook = new XSSFWorkbook(fileInputStream);
-        Sheet sheet = workbook.getSheetAt(0);  // A primeira aba do Excel
+        try (Workbook workbook = new XSSFWorkbook(fileInputStream)) {
+            Sheet sheet = workbook.getSheetAt(0);  // Pega a primeira aba do Excel
 
-        for (Row row : sheet) {
-            if (row.getRowNum() == 0) continue;  // Ignora a primeira linha (cabeçalho)
+            for (Row row : sheet) {
+                if (row.getRowNum() == 0) continue;  // Ignora a primeira linha (cabeçalho)
 
-            Cliente cliente = new Cliente();
-            cliente.setNome(row.getCell(0).getStringCellValue());
+                Cliente cliente = new Cliente();
+                cliente.setNome(getStringCellValue(row, 0));
+                cliente.setTipoPessoa(TipoPessoa.fromString(getStringCellValue(row, 1)));
+                cliente.setCpfCnpj(getStringCellValue(row, 2));
+                cliente.setEmail(getStringCellValue(row, 3));
 
-            // Converte a String para o enum TipoPessoa
-            String tipoPessoaString = row.getCell(1).getStringCellValue();
-            cliente.setTipoPessoa(TipoPessoa.fromString(tipoPessoaString));
-
-            cliente.setCpfCnpj(row.getCell(2).getStringCellValue());
-            cliente.setEmail(row.getCell(3).getStringCellValue());
-
-            // Valide duplicatas e formato antes de adicionar
-            if (validarCliente(cliente)) {
-                clientes.add(cliente);
+                if (validarCliente(cliente)) {
+                    clientes.add(cliente);
+                } else {
+                    // Log ou exceção se necessário (cliente inválido)
+                    System.out.println("Cliente inválido: " + cliente);
+                }
             }
+        } catch (Exception e) {
+            // Log para erros na leitura do Excel
+            throw new Exception("Erro ao ler o arquivo Excel: " + e.getMessage(), e);
         }
 
-        workbook.close();
         return clientes;
     }
 
-
     private boolean validarCliente(Cliente cliente) {
-        // Lógica de validação (duplicatas, formato, etc.)
-        return true;  // Retorne true se válido
+        // Validações de CPF/CNPJ e Email podem ser implementadas aqui
+        return cliente.getNome() != null && !cliente.getNome().isEmpty()
+                && cliente.getCpfCnpj() != null && !cliente.getCpfCnpj().isEmpty()
+                && cliente.getEmail() != null && !cliente.getEmail().isEmpty();
     }
 
     private String getStringCellValue(Row row, int cellIndex) {
         Cell cell = row.getCell(cellIndex);
-        if (cell == null) {
-            return "";  // Se a célula estiver vazia, retorna uma string vazia
-        }
-        if (cell.getCellType() == CellType.STRING) {
-            return cell.getStringCellValue();
-        } else if (cell.getCellType() == CellType.NUMERIC) {
-            return String.valueOf(cell.getNumericCellValue());
-        } else {
-            return "";  // Retorna vazio para outros tipos de células
-        }
-    }
-
-    private TipoPessoa getTipoPessoa(String tipoPessoaStr) {
-        try {
-            return TipoPessoa.valueOf(tipoPessoaStr.toUpperCase());  // Converte String para enum TipoPessoa
-        } catch (IllegalArgumentException e) {
-            // Caso o valor seja inválido para o enum, retornar um valor padrão ou lançar exceção
-            return TipoPessoa.FISICA;  // Exemplo de retorno padrão
-        }
+        if (cell == null) return "";
+        return switch (cell.getCellType()) {
+            case STRING -> cell.getStringCellValue();
+            case NUMERIC -> String.valueOf((long) cell.getNumericCellValue());
+            default -> "";
+        };
     }
 }

@@ -5,35 +5,29 @@
   <title>Listagem de Clientes</title>
 </head>
 <body>
+
 <h2>Clientes Cadastrados</h2>
 
+<!-- Formulário para conter os botões -->
+<form wicket:id="form">
+  <button type="submit" wicket:id="backToHome">Voltar para Home</button>
+</form>
+
+<!-- Tabela de clientes -->
 <table>
   <thead>
   <tr>
-    <th>Tipo Pessoa</th>
-    <th>CPF/CNPJ</th>
     <th>Nome</th>
     <th>Email</th>
-    <th>Ações</th>
   </tr>
   </thead>
   <tbody wicket:id="clientes">
   <tr>
-    <td><span wicket:id="tipoPessoa"></span></td>
-    <td><span wicket:id="cpfCnpj"></span></td>
     <td><span wicket:id="nome"></span></td>
     <td><span wicket:id="email"></span></td>
-    <td>
-      <a wicket:id="gerarRelatorio">Gerar Relatório</a>
-    </td>
   </tr>
   </tbody>
 </table>
 
-<!-- Navegação de Páginas -->
-<div wicket:id="navigator"></div>
-
-<!-- FeedbackPanel -->
-<div wicket:id="feedback"></div>
 </body>
 </html>

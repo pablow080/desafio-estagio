@@ -19,42 +19,30 @@ public class ExcelExportService {
             // Formatar como CNPJ: xx.xxx.xxx/xxxx-xx
             return cpfCnpj.replaceAll("(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})", "$1.$2.$3/$4-$5");
         }
-        return cpfCnpj;
+        return cpfCnpj;  // Retorna como está se não for CPF ou CNPJ
     }
 
     public byte[] exportarClientesParaExcel(List<Cliente> clientes) throws IOException {
-        Workbook workbook = new XSSFWorkbook();
+        XSSFWorkbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("Clientes");
 
-        // Criação do cabeçalho
-        Row headerRow = sheet.createRow(0);
-        headerRow.createCell(0).setCellValue("Nome");
-        headerRow.createCell(1).setCellValue("Tipo Pessoa");
-        headerRow.createCell(2).setCellValue("CPF/CNPJ");
-        headerRow.createCell(3).setCellValue("Email");
+        // Cabeçalhos
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Nome");
+        header.createCell(1).setCellValue("CPF");
+        header.createCell(2).setCellValue("CNPJ");
 
-        // Formatação para o cabeçalho (negrito)
-        CellStyle headerStyle = workbook.createCellStyle();
-        Font headerFont = workbook.createFont();
-        headerFont.setBold(true);
-        headerStyle.setFont(headerFont);
-
-        for (Cell cell : headerRow) {
-            cell.setCellStyle(headerStyle);
-        }
-
-        // Preenchendo os dados
+        // Adicionando os dados dos clientes
         int rowNum = 1;
         for (Cliente cliente : clientes) {
             Row row = sheet.createRow(rowNum++);
             row.createCell(0).setCellValue(cliente.getNome());
-            row.createCell(1).setCellValue(cliente.getTipoPessoa().name());
-            row.createCell(2).setCellValue(formatarCpfCnpj(cliente.getCpfCnpj()));
-            row.createCell(3).setCellValue(cliente.getEmail());
+            row.createCell(1).setCellValue(formatarCpfCnpj(cliente.getCpfCnpj()));  // Formata o CPF/CNPJ
+            row.createCell(2).setCellValue(formatarCpfCnpj(cliente.getCpfCnpj()));  // Formata o CPF/CNPJ
         }
 
         // Ajuste automático das colunas
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             sheet.autoSizeColumn(i);
         }
 
