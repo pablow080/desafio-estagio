@@ -7,10 +7,12 @@
         <option value="$PROJECT_DIR$/wicket-frontend/pom.xml" />
         <option value="$PROJECT_DIR$/wicket-frontend/springboot/pom.xml" />
         <option value="$PROJECT_DIR$/java-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/java-backend/pom.xml" />
         <option value="$PROJECT_DIR$/wicket-frontend/pom.xml" />
       </set>
     </option>

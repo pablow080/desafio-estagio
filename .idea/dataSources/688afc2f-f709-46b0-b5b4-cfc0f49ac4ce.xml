@@ -1049,22 +1049,22 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <LastIntrospectionLocalTimestamp>2025-03-11.11:27:45</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="295" parent="1" name="mysql.infoschema">
+    <user id="295" parent="1" name="pablo">
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="296" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.session">
+    <user id="297" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="mysql.sys">
+    <user id="298" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="298" parent="1" name="pablo">
       <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="299" parent="1" name="root">
@@ -7557,121 +7557,130 @@ User</ColNames>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="1538" parent="417" name="tipo_pessoa">
+    <column id="1538" parent="417" name="cpf">
       <Position>2</Position>
-      <StoredType>enum(&apos;FISICA&apos;, &apos;JURIDICA&apos;)|0e</StoredType>
-    </column>
-    <column id="1539" parent="417" name="cpf">
-      <Position>3</Position>
       <StoredType>varchar(14)|0s</StoredType>
     </column>
-    <column id="1540" parent="417" name="cnpj">
-      <Position>4</Position>
+    <column id="1539" parent="417" name="cnpj">
+      <Position>3</Position>
       <StoredType>varchar(18)|0s</StoredType>
     </column>
-    <column id="1541" parent="417" name="nome">
+    <column id="1540" parent="417" name="nome">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="1541" parent="417" name="rg">
       <Position>5</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="1542" parent="417" name="rg">
+    <column id="1542" parent="417" name="data_nascimento">
       <Position>6</Position>
-      <StoredType>varchar(20)|0s</StoredType>
+      <StoredType>date|0s</StoredType>
     </column>
-    <column id="1543" parent="417" name="data_nascimento">
+    <column id="1543" parent="417" name="razao_social">
+      <NotNull>1</NotNull>
       <Position>7</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="1544" parent="417" name="razao_social">
+    <column id="1544" parent="417" name="inscricao_estadual">
       <Position>8</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="1545" parent="417" name="inscricao_estadual">
+    <column id="1545" parent="417" name="data_criacao">
       <Position>9</Position>
-      <StoredType>varchar(20)|0s</StoredType>
-    </column>
-    <column id="1546" parent="417" name="data_criacao">
-      <Position>10</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="1547" parent="417" name="email">
-      <Position>11</Position>
-      <StoredType>varchar(100)|0s</StoredType>
+    <column id="1546" parent="417" name="email">
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="1548" parent="417" name="ativo">
-      <Position>12</Position>
+    <column id="1547" parent="417" name="ativo">
+      <Position>11</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <index id="1549" parent="417" name="PRIMARY">
+    <column id="1548" parent="417" name="cpf_cnpj">
+      <NotNull>1</NotNull>
+      <Position>12</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="1549" parent="417" name="tipo_pessoa">
+      <NotNull>1</NotNull>
+      <Position>13</Position>
+      <StoredType>varchar(10)|0s</StoredType>
+    </column>
+    <index id="1550" parent="417" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="1550" parent="417" name="PRIMARY">
+    <key id="1551" parent="417" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="1551" parent="418" name="id">
+    <column id="1552" parent="418" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="1552" parent="418" name="cliente_id">
+    <column id="1553" parent="418" name="cliente_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="1553" parent="418" name="logradouro">
+    <column id="1554" parent="418" name="logradouro">
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="1554" parent="418" name="numero">
+    <column id="1555" parent="418" name="numero">
       <Position>4</Position>
       <StoredType>varchar(10)|0s</StoredType>
     </column>
-    <column id="1555" parent="418" name="cep">
+    <column id="1556" parent="418" name="cep">
       <Position>5</Position>
       <StoredType>varchar(9)|0s</StoredType>
     </column>
-    <column id="1556" parent="418" name="bairro">
+    <column id="1557" parent="418" name="bairro">
       <Position>6</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="1557" parent="418" name="telefone">
+    <column id="1558" parent="418" name="telefone">
       <Position>7</Position>
       <StoredType>varchar(20)|0s</StoredType>
     </column>
-    <column id="1558" parent="418" name="cidade">
+    <column id="1559" parent="418" name="cidade">
       <Position>8</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="1559" parent="418" name="estado">
+    <column id="1560" parent="418" name="estado">
       <Position>9</Position>
       <StoredType>varchar(2)|0s</StoredType>
     </column>
-    <column id="1560" parent="418" name="principal">
+    <column id="1561" parent="418" name="principal">
       <Position>10</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="1561" parent="418" name="complemento">
+    <column id="1562" parent="418" name="complemento">
       <Position>11</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <foreign-key id="1562" parent="418" name="endereco_ibfk_1">
+    <foreign-key id="1563" parent="418" name="endereco_ibfk_1">
       <ColNames>cliente_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>cliente</RefTableName>
     </foreign-key>
-    <index id="1563" parent="418" name="PRIMARY">
+    <index id="1564" parent="418" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="1564" parent="418" name="cliente_id">
+    <index id="1565" parent="418" name="cliente_id">
       <ColNames>cliente_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1565" parent="418" name="PRIMARY">
+    <key id="1566" parent="418" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

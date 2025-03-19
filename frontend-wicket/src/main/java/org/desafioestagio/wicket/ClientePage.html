@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-br">
+<meta charset="UTF-8">
+<head>
+    <title>Gestão de Clientes</title>
+</head>
+<body>
+<h1 wicket:id="title"></h1>
+
+<!-- Lista de Clientes -->
+<ul wicket:id="clienteList">
+    <li>
+        <span wicket:id="nome"></span>
+        <button wicket:id="deleteButton">Excluir</button>
+    </li>
+</ul>
+
+<!-- Formulário para Adicionar Cliente -->
+<form wicket:id="addForm">
+    <button wicket:id="addButton">Adicionar Cliente</button>
+</form>
+</body>
+</html>

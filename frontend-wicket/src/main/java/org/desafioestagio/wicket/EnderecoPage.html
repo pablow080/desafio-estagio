@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-br">
+<meta charset="UTF-8">
+<head>
+  <title>Gestão de Endereços</title>
+</head>
+<body>
+<h1 wicket:id="title"></h1>
+
+<!-- Lista de Endereços -->
+<ul wicket:id="enderecoList">
+  <li>
+    <span wicket:id="logradouro"></span>
+    <button wicket:id="deleteButton">Excluir</button>
+  </li>
+</ul>
+
+<!-- Formulário para Adicionar Endereço -->
+<form wicket:id="addForm">
+  <button wicket:id="addButton">Adicionar Endereço</button>
+</form>
+</body>
+</html>
