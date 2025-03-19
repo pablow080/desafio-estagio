@@ -18,7 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="backend" options="-parameters --add-exports jdk.hotspot.agent/sun.jvm.hotspot.debugger.x86=ALL-UNNAMED" />
+      <module name="backend" options="-parameters" />
       <module name="java-backend" options="-parameters" />
       <module name="springboot" options="-parameters" />
     </option>

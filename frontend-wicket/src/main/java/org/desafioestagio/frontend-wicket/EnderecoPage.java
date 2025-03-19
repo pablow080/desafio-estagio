@@ -1,4 +1,4 @@
-package org.desafioestagio.backend.page;
+package org.desafioestagio.backend;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;

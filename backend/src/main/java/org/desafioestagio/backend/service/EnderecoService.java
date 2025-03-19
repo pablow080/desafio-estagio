@@ -1,13 +1,15 @@
 package org.desafioestagio.backend.service;
 
 import org.desafioestagio.backend.model.Endereco;
-import org.desafioestagio.backend.controller.EnderecoRepository;
+import org.desafioestagio.backend.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class EnderecoService {
     @Autowired
     private EnderecoRepository enderecoRepository;
@@ -21,6 +23,9 @@ public class EnderecoService {
     }
 
     public Endereco salvar(Endereco endereco) {
+        if (endereco.getCliente() == null) {
+            throw new IllegalArgumentException("O cliente não pode ser nulo");
+        }
         return enderecoRepository.save(endereco);
     }
 

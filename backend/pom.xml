@@ -8,15 +8,44 @@
         <version>3.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>org.desafio-estagio</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>backend</name>
     <description>backend</description>
+
     <properties>
         <java.version>17</java.version>
     </properties>
+
+    <repositories>
+        <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+        <repository>
+            <id>apache-snapshots</id>
+            <url>https://repository.apache.org/snapshots/</url>
+        </repository>
+        <repository>
+            <id>apache-repo</id>
+            <url>https://repository.apache.org/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <!-- Dependência do Apache Wicket -->
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-spring</artifactId>
+            <version>9.5.0</version> <!-- Ou a versão desejada -->
+        </dependency>
+        <!-- Dependência do Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -52,6 +81,11 @@
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version> <!-- ou a versão mais recente -->
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>

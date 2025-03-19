@@ -1,8 +1,7 @@
-package org.desafioestagio.wicket.pages;
+package org.desafioestagio.backend;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.desafioestagio.backend.model.Cliente;
 import org.desafioestagio.backend.service.ClienteService;

@@ -1,4 +1,4 @@
-package org.desafioestagio.wicket.components;
+package org.desafioestagio.backend.component;
 
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;

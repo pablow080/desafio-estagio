@@ -1,0 +1,4 @@
+<modules>
+    <module>backend</module>
+    <module>wicket</module>
+</modules>

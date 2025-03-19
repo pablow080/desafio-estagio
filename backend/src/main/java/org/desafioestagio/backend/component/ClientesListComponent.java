@@ -1,4 +1,4 @@
-package org.desafioestagio.wicket.components;
+package org.desafioestagio.backend.component;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;

@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -18,13 +19,18 @@ public class ClienteControllerTest {
 
     @Test
     public void testCriarCliente() throws Exception {
-        String clienteJson = "{\"tipoPessoa\":\"Física\",\"cpfCnpj\":\"12345678901\",\"nome\":\"Maria Silva\",\"email\":\"maria@email.com\",\"ativo\":true}";
+        String clienteJson = "{\"tipoPessoa\":\"Fisica\"," +
+                "\"cpfCnpj\":\"12345678901\"," +
+                "\"nome\":\"Maria Silva\"," +
+                "\"email\":\"maria@email.com\"," +
+                "\"ativo\":true," +
+                "\"razaoSocial\":\"Maria Silva\"}";
 
         mockMvc.perform(MockMvcRequestBuilders.post("/clientes")
                         .contentType(APPLICATION_JSON)
                         .content(clienteJson))
-                .andExpect(status().isOk());
-
+                .andExpect(status().isCreated()) // Verifica se o status HTTP é 201 CREATED
+                .andExpect(jsonPath("$.id").exists()); // Verifica se o ID do cliente foi retornado
     }
 
     @Test
@@ -32,4 +38,4 @@ public class ClienteControllerTest {
         mockMvc.perform(get("/clientes"))
                 .andExpect(status().isOk());
     }
-    }
+}
