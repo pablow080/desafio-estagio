@@ -1,67 +1,49 @@
 package org.desafioestagio.backend.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Data;
 
-@Data
-@Setter
-@Getter
 @Entity
 @Table(name = "endereco")
 public class Endereco {
-    // Getter e Setter para o campo id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Getter e Setter para o campo logradouro
-    @NotBlank(message = "Logradouro é obrigatório")
-    @Column(nullable = false)
     private String logradouro;
-
-    // Getter e Setter para o campo numero
-    @NotBlank(message = "Número é obrigatório")
-    @Column(nullable = false)
     private String numero;
-
-    // Getter e Setter para o campo cep
-    @NotBlank(message = "CEP é obrigatório")
-    @Pattern(regexp = "\\d{5}-\\d{3}", message = "CEP inválido")
-    @Column(nullable = false)
     private String cep;
-
-    // Getter e Setter para o campo bairro
     private String bairro;
-
-    // Getter e Setter para o campo telefone
-    @Pattern(regexp = "\\(\\d{2}\\) \\d{4,5}-\\d{4}", message = "Telefone inválido")
-    @Column(nullable = false)
     private String telefone;
-
-    // Getter e Setter para o campo cidade
     private String cidade;
-
-    // Getter e Setter para o campo estado
     private String estado;
-
-    // Getter e Setter para o campo enderecoPrincipal
-    @Column(nullable = false)
-    private boolean enderecoPrincipal = false;
-
-    // Getter e Setter para o campo complemento
+    private boolean enderecoPrincipal;
     private String complemento;
 
-    // Getter e Setter para o campo cliente
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    // Construtor padrão (necessário para o Hibernate)
-    public Endereco() {}
-
-    // Se precisar de lógica adicional, adicione-a aqui (por exemplo, verificação ou manipulação de dados antes de persistir).
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getLogradouro() { return logradouro; }
+    public void setLogradouro(String logradouro) { this.logradouro = logradouro; }
+    public String getNumero() { return numero; }
+    public void setNumero(String numero) { this.numero = numero; }
+    public String getCep() { return cep; }
+    public void setCep(String cep) { this.cep = cep; }
+    public String getBairro() { return bairro; }
+    public void setBairro(String bairro) { this.bairro = bairro; }
+    public String getTelefone() { return telefone; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
+    public String getCidade() { return cidade; }
+    public void setCidade(String cidade) { this.cidade = cidade; }
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
+    public boolean isEnderecoPrincipal() { return enderecoPrincipal; }
+    public void setEnderecoPrincipal(boolean enderecoPrincipal) { this.enderecoPrincipal = enderecoPrincipal; }
+    public String getComplemento() { return complemento; }
+    public void setComplemento(String complemento) { this.complemento = complemento; }
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
 }
+

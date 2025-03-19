@@ -5,144 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="228c6dc8-1b1f-4dc3-90d4-149f1d2f28a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/TestDataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Endereco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/TipoPessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/ClienteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/EnderecoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/ClienteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/EnderecoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/ClienteServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/EnderecoServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/ClientePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/EnderecoPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/HomePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/component/ClienteFormComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/component/ClientesListComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/pages/CadastrarClientePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/pages/ListarClientesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-wicket/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/controller/ClienteControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/controller/EnderecoControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/ClientListComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/application-test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.config.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.routes.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/cliente.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/form/cliente-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/ClientePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/form/cliente-form.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/form/cliente-form.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/form/cliente-form.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/generic-table/generic-table.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/generic-table/generic-table.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/paginated-table/paginated-table.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/EnderecoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/paginated-table/paginated-table.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/paginated-table/paginated-table.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/paginated-table/paginated-table.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/api.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/api.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/cliente.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/cliente.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/endereco.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/app/services/endereco.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/main.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-frontend/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/JavaBackendApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/config/WicketConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/controller/ClienteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/controller/EnderecoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/controller/RelatorioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/dao/ClienteDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/dao/EnderecoDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/dto/ClienteDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/dto/EnderecoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/model/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/model/Endereco.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/model/TipoPessoa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/notfound/ClienteNaoEncontradoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/pages/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/relatorio/GeradorRelatorio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/repository/ClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/repository/EnderecoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/ClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/EnderecoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/ExcelExportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/ExcelImportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/JasperReportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/service/RelatorioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/org/desafioestagio/javabackend/wicket/WicketApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/resources/relatorio-clientes.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/resources/reports/relatorio-clientes.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/test/java/org/desafioestagio/javabackend/JavaBackendApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/test/java/org/desafioestagio/javabackend/service/ClienteServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/test/java/org/desafioestagio/javabackend/service/ExcelExportServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/test/java/org/desafioestagio/javabackend/service/ExcelImportServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/.mvn/jvm.config" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/.mvn/maven.config" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-wicket/src/main/java/org/desafioestagio/wicket/WicketApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/WicketApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/WicketInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/HomePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/form/ClienteFormPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/form/EnderecoFormPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/list/ClienteListPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/list/EnderecoListPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/java/ org/desafioestagio/wicketfrontend/pages/relatorio/RelatorioPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/ClienteFormPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/ClienteListPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/EnderecoFormPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/EnderecoListPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/HomePage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/main/resources/org/desafioestagio/wicketfrontend/RelatorioPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/test/java/ org/desafioestagio/wicketfrontend/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket-frontend/src/test/java/ org/desafioestagio/wicketfrontend/HomePageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/TestDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/TipoPessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/ClienteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/EnderecoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/EnderecoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/EnderecoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/ClienteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/ClienteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/EnderecoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/org/desafioestagio/backend/service/EnderecoServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,77 +69,77 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JAR Application.java-backend-0.0.1-SNAPSHOT.jar.executor": "Debug",
-    "JUnit.ExcelExportServiceTest.testExportarClientesParaExcel.executor": "Debug",
-    "JavaScript Debug.app.component.html.executor": "Debug",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.Unknown [clean,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [clean,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [clean,install,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [clean,install].executor": "Run",
-    "Maven.backend [clean].executor": "Run",
-    "Maven.backend [compile,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [install,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [package,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [package].executor": "Run",
-    "Maven.backend [site,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [test,-DforkCount=0...].executor": "Debug",
-    "Maven.backend [verify,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [clean,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [clean,install...].executor": "Debug",
-    "Maven.java-backend [clean,install].executor": "Run",
-    "Maven.java-backend [clean].executor": "Run",
-    "Maven.java-backend [compile,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [deploy,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [install,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [install].executor": "Run",
-    "Maven.java-backend [package,-DforkCount=0...].executor": "Debug",
-    "Maven.java-backend [package].executor": "Run",
-    "Maven.java-backend [test,-DforkCount=0...].executor": "Debug",
-    "Maven.wicket-frontend.executor": "Debug",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.JavaBackendApplication.executor": "Debug",
-    "database.data.extractors.current.export.id": "XML-Groovy.xml.groovy",
-    "database.data.extractors.current.id": "XML-Groovy.xml.groovy",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "java.suggest.annotation.dependency": "false",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/unika-dev/desafio-estagio/java-backend/src/test/java",
-    "last_opened_file_path": "C:/Users/unika-dev/desafio-estagio/java-backend/src/test/resources",
-    "mysql-explain.enableMySQLExplain": "true",
-    "mysql-explain.existMysqlJar": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "database.data.views.appearance",
-    "ts.external.directory.path": "C:\\Users\\unika-dev\\desafio-estagio\\angular-frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JAR Application.java-backend-0.0.1-SNAPSHOT.jar.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ExcelExportServiceTest.testExportarClientesParaExcel.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.app.component.html.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Unknown [clean,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [clean,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [clean,install,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.backend [compile,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [install,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [package,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.backend [site,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [test,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.backend [verify,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [clean,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [clean,install...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-backend [compile,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [deploy,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [install,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-backend [package,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.java-backend [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-backend [test,-DforkCount=0...].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.wicket-frontend.executor&quot;: &quot;Debug&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JavaBackendApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;XML-Groovy.xml.groovy&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;XML-Groovy.xml.groovy&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;java.suggest.annotation.dependency&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/unika-dev/desafio-estagio/java-backend/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/unika-dev/desafio-estagio/java-backend/src/test/resources&quot;,
+    &quot;mysql-explain.enableMySQLExplain&quot;: &quot;true&quot;,
+    &quot;mysql-explain.existMysqlJar&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views.appearance&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\unika-dev\\desafio-estagio\\angular-frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -275,6 +156,10 @@
       <recent name="C:\Users\unika-dev\desafio-estagio\java-backend\src\main\resources" />
       <recent name="C:\Users\unika-dev\desafio-estagio\angular-frontend\src\app\services" />
       <recent name="C:\Users\unika-dev\desafio-estagio\wicket-frontend\src\main\resources\org\desafioestagio\wicketfrontend" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.desafioestagio.backend.controller" />
+      <recent name="org.desafioestagio.backend" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.JavaBackendApplication">
@@ -367,6 +252,7 @@
       <workItem from="1742295784723" duration="5264000" />
       <workItem from="1742301198214" duration="2504000" />
       <workItem from="1742303729730" duration="13386000" />
+      <workItem from="1742381880539" duration="4251000" />
     </task>
     <servers />
   </component>
