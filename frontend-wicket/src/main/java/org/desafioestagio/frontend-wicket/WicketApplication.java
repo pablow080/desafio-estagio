@@ -1,23 +1,23 @@
-package org.desafioestagio.backend;
+package org.desafioestagio.frontend-wicket;
 
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.settings.MarkupSettings;
+import org.apache.wicket.spring.boot.SpringBootWebApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WicketApplication extends WebApplication {
+public class WicketApplication extends SpringBootWebApplication {
 
     @Override
     public Class<HomePage> getHomePage() {
-        return HomePage.class; // Substitua HomePage pela sua classe de página inicial
+        return HomePage.class;  // Página inicial
     }
 
     @Override
     public void init() {
         super.init();
-        // Configurações do Wicket, como caches, sessões, etc.
         getMarkupSettings().setStripWicketTags(true);
+        mountPage("/home", HomePage.class);
+        mountPage("/", HomePage.class); // Mapeando a página inicial para a raiz
     }
 
     public static void main(String[] args) {

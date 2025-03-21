@@ -1,13 +1,13 @@
 package org.desafioestagio.backend.service;
 
 import org.desafioestagio.backend.exception.ClienteJaCadastradoException;
+import org.desafioestagio.backend.exception.ClienteNaoEncontradoException;
 import org.desafioestagio.backend.model.Cliente;
 import org.desafioestagio.backend.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.desafioestagio.backend.exception.ClienteNaoEncontradoException;
-
-import java.util.List;
 
 @Service
 public class ClienteService {
@@ -15,8 +15,9 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public List<Cliente> listarTodos() {
-        return clienteRepository.findAll();
+    // Método para listar clientes com paginação
+    public Page<Cliente> listarTodos(Pageable pageable) {
+        return clienteRepository.findAll(pageable);  // Usa o pageable para retornar a lista paginada
     }
 
     public Cliente buscarPorId(Long id) {

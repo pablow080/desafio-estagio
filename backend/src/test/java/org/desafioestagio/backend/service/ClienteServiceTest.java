@@ -1,88 +1,122 @@
 package org.desafioestagio.backend.service;
 
-import org.desafioestagio.backend.BackendApplication;
+import org.desafioestagio.backend.exception.ClienteJaCadastradoException;
+import org.desafioestagio.backend.exception.ClienteNaoEncontradoException;
 import org.desafioestagio.backend.model.Cliente;
+import org.desafioestagio.backend.model.Endereco;
 import org.desafioestagio.backend.model.TipoPessoa;
 import org.desafioestagio.backend.repository.ClienteRepository;
-import org.desafioestagio.backend.exception.ClienteJaCadastradoException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import java.util.Optional;
-import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.mockito.Mockito;
 
-@SpringBootTest(classes = BackendApplication.class)
-@ActiveProfiles("test")
-public class ClienteServiceTest {
-    @Autowired
+import java.time.LocalDate;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class ClienteServiceTest {
+
+    @InjectMocks
     private ClienteService clienteService;
-    @Autowired
+
+    @Mock
     private ClienteRepository clienteRepository;
 
-    @Test
-    public void testSalvarCliente() {
-        // Cria um cliente
-        Cliente cliente = new Cliente();
-        cliente.setTipoPessoa(TipoPessoa.Fisica);
-        cliente.setCpfCnpj("12345678901");
-        cliente.setNome("João Silva");
-        cliente.setEmail("joao@email.com");
+    private Cliente cliente;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+
+        cliente = new Cliente();
+        cliente.setTipoPessoa(TipoPessoa.FISICA);
+        cliente.setCpfCnpj("123.456.789-00");
+        cliente.setNome("João da Silva");
+        cliente.setRg("12.345.678-9");
+        cliente.setDataNascimento(LocalDate.of(1985, 5, 20));
+        cliente.setEmail("joao.silva@email.com");
         cliente.setAtivo(true);
+    }
 
-        // Salva o cliente
-        Cliente salvo = clienteService.salvar(cliente);
 
-        // Verifica se o cliente foi salvo corretamente
-        assertNotNull(salvo.getId(), "O ID do cliente não pode ser nulo após a persistência.");
+    @Test
+    void listarTodos_DeveRetornarPaginaDeClientes() {
+        // Arrange
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Cliente> pageMock = new PageImpl<>(Collections.singletonList(cliente));  // Criando uma página com um cliente mockado // Mockando Page<Cliente>
+        when(clienteRepository.findAll(pageable)).thenReturn(pageMock);
 
-        // Busca o cliente pelo ID
-        Optional<Cliente> clienteEncontrado = Optional.ofNullable(clienteService.buscarPorId(salvo.getId()));
+        // Act
+        Page<Cliente> result = clienteService.listarTodos(pageable);
 
-        // Verifica se o cliente foi encontrado
-        assertTrue(clienteEncontrado.isPresent(), "Cliente não encontrado após ser salvo.");
+        // Assert
+        assertNotNull(result);
+        verify(clienteRepository, times(1)).findAll(pageable); // Verifica se o método foi chamado uma vez
     }
 
     @Test
-    public void testBuscarCliente() {
-        // Cria e salva um cliente no banco de dados
-        Cliente cliente = new Cliente();
-        cliente.setTipoPessoa(TipoPessoa.Fisica);
-        cliente.setCpfCnpj("12345678901");
-        cliente.setNome("João Silva");
-        cliente.setEmail("joao@email.com");
-        cliente.setAtivo(true);
-        clienteRepository.save(cliente);
+    void testSalvarClienteComCpfCnpjJaCadastrado() {
+        when(clienteRepository.existsByCpfCnpj(cliente.getCpfCnpj())).thenReturn(true);
 
-        // Busca o cliente pelo ID
-        Optional<Cliente> clienteEncontrado = Optional.ofNullable(clienteService.buscarPorId(cliente.getId()));
+        ClienteJaCadastradoException exception = assertThrows(ClienteJaCadastradoException.class, () -> {
+            clienteService.salvar(cliente);
+        });
 
-        // Verifica se o cliente foi encontrado
-        assertTrue(clienteEncontrado.isPresent(), "Cliente não encontrado com o ID correto.");
+        assertEquals("CPF/CNPJ já cadastrado", exception.getMessage());
     }
 
     @Test
-    public void testSalvarClienteComCpfCnpjDuplicado() {
-        // Cria e salva o primeiro cliente
-        Cliente cliente1 = new Cliente();
-        cliente1.setTipoPessoa(TipoPessoa.Fisica);
-        cliente1.setCpfCnpj("12345678901");
-        cliente1.setNome("João Silva");
-        cliente1.setEmail("joao@email.com");
-        cliente1.setAtivo(true);
-        clienteService.salvar(cliente1);
+    void testSalvarClienteComSucesso() {
+        when(clienteRepository.existsByCpfCnpj(cliente.getCpfCnpj())).thenReturn(false);
+        when(clienteRepository.save(cliente)).thenReturn(cliente);
 
-        // Cria o segundo cliente com o mesmo CPF
-        Cliente cliente2 = new Cliente();
-        cliente2.setTipoPessoa(TipoPessoa.Fisica);
-        cliente2.setCpfCnpj("12345678901");
-        cliente2.setNome("Maria Oliveira");
-        cliente2.setEmail("maria@email.com");
-        cliente2.setAtivo(true);
+        Cliente clienteSalvo = clienteService.salvar(cliente);
 
-        // Verifica se a exceção é lançada ao tentar salvar o cliente com CPF duplicado
-        assertThrows(ClienteJaCadastradoException.class, () -> {
-            clienteService.salvar(cliente2);
-        }, "Deveria lançar exceção ao tentar salvar um cliente com CPF/CNPJ duplicado.");
+        assertNotNull(clienteSalvo);
+        assertEquals(cliente.getId(), clienteSalvo.getId());
+        verify(clienteRepository, times(1)).save(cliente);
+    }
+
+    @Test
+    void testBuscarClientePorId() {
+        when(clienteRepository.findById(1L)).thenReturn(Optional.of(cliente));
+
+        Cliente clienteEncontrado = clienteService.buscarPorId(1L);
+
+        assertNotNull(clienteEncontrado);
+        assertEquals(cliente.getId(), clienteEncontrado.getId());
+    }
+
+    @Test
+    void testExcluirCliente() {
+        when(clienteRepository.existsById(1L)).thenReturn(true);
+        doNothing().when(clienteRepository).deleteById(1L);
+
+        clienteService.excluir(1L);
+
+        verify(clienteRepository, times(1)).deleteById(1L);
+    }
+
+    @Test
+    void testExcluirClienteNaoEncontrado() {
+        when(clienteRepository.existsById(1L)).thenReturn(false);
+
+        ClienteNaoEncontradoException exception = assertThrows(ClienteNaoEncontradoException.class, () -> {
+            clienteService.excluir(1L);
+        });
+
+        assertEquals("Cliente não encontrado para exclusão com id: 1", exception.getMessage());
     }
 }

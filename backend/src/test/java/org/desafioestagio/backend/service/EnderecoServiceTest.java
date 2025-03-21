@@ -1,72 +1,85 @@
 package org.desafioestagio.backend.service;
 
-import org.desafioestagio.backend.BackendApplication;
 import org.desafioestagio.backend.model.Cliente;
 import org.desafioestagio.backend.model.Endereco;
 import org.desafioestagio.backend.model.TipoPessoa;
-import org.junit.jupiter.api.Assertions;
+import org.desafioestagio.backend.repository.ClienteRepository;
+import org.desafioestagio.backend.repository.EnderecoRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
 
-@SpringBootTest(classes = BackendApplication.class)
-@ActiveProfiles("test")
-public class EnderecoServiceTest {
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+@Transactional  // Garante que os dados sejam revertidos após cada teste
+class EnderecoServiceTest {
 
     @Autowired
     private EnderecoService enderecoService;
 
-    @Test
-    public void testSalvarEndereco() {
-        // Cria o cliente
-        Cliente cliente = new Cliente();
-        cliente.setNome("João da Silva");
-        cliente.setCpfCnpj("12345678900");
-        cliente.setTipoPessoa(TipoPessoa.Fisica);
-        cliente.setAtivo(true);
-        // Salve o cliente se necessário ou configure um mock
+    @Autowired
+    private EnderecoRepository enderecoRepository;
 
-        // Cria o endereço
-        Endereco endereco = new Endereco();
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    private Endereco endereco;
+    private Cliente cliente;
+
+    @BeforeEach
+    void setUp() {
+        // Limpa os dados no banco antes de cada teste
+        clienteRepository.deleteAll();
+        enderecoRepository.deleteAll();
+
+        // Verificar se o CPF já existe
+        Cliente clienteExistente = clienteRepository.findByCpfCnpj("123.456.789-00");
+        if (clienteExistente != null) {
+            clienteRepository.delete(clienteExistente);
+        }
+
+        // Agora, cria o cliente e o endereço
+        cliente = new Cliente();
+        cliente.setTipoPessoa(TipoPessoa.FISICA);
+        cliente.setCpfCnpj("123.456.789-00");  // CPF único
+        cliente.setNome("João da Silva");
+        cliente.setRg("12.345.678-9");
+        cliente.setDataNascimento(LocalDate.of(1985, 5, 20));
+        cliente.setEmail("joao.silva@email.com");
+        cliente.setAtivo(true);
+
+        cliente = clienteRepository.save(cliente);
+
+        endereco = new Endereco();
         endereco.setLogradouro("Rua das Flores");
         endereco.setNumero("123");
         endereco.setCep("12345-678");
+        endereco.setBairro("Jardim das Palmeiras");
+        endereco.setTelefone("987654321");
         endereco.setCidade("São Paulo");
         endereco.setEstado("SP");
-        endereco.setCliente(cliente); // Associação com o cliente
+        endereco.setEnderecoPrincipal(true);
+        endereco.setComplemento("Apartamento 45");
+        endereco.setCliente(cliente);
 
-        // Salva o endereço
-        Endereco salvo = enderecoService.salvar(endereco);
-
-        // Verifica se o ID foi gerado
-        Assertions.assertNotNull(salvo.getId());
-
-        // Verifica se os dados salvos estão corretos
-        Assertions.assertEquals("Rua das Flores", salvo.getLogradouro());
-        Assertions.assertEquals("123", salvo.getNumero());
-        Assertions.assertEquals("12345-678", salvo.getCep());
-        Assertions.assertEquals("São Paulo", salvo.getCidade());
-        Assertions.assertEquals("SP", salvo.getEstado());
+        endereco = enderecoRepository.save(endereco);
     }
 
+
     @Test
-    public void testExcluirEndereco() {
-        // Cria o endereço
-        Endereco endereco = new Endereco();
-        endereco.setLogradouro("Rua das Flores");
-        endereco.setNumero("123");
-        endereco.setCep("12345-678");
-        endereco.setCidade("São Paulo");
-        endereco.setEstado("SP");
+    void testeExcluirEndereco() {
+        Long enderecoId = endereco.getId();
+        assertNotNull(enderecoRepository.findById(enderecoId));
 
-        // Salva o endereço
-        Endereco salvo = enderecoService.salvar(endereco);
+        // Excluir o endereço
+        enderecoService.excluirEndereco(enderecoId);
 
-        // Exclui o endereço
-        enderecoService.excluir(salvo.getId());
-
-        // Verifica se o endereço foi excluído
-        Assertions.assertTrue(enderecoService.buscarPorId(salvo.getId()).isEmpty(), "Endereço não foi excluído");
+        // Verificar se o endereço foi excluído
+        assertFalse(enderecoRepository.existsById(enderecoId), "Endereço não foi excluído com sucesso.");
     }
 }

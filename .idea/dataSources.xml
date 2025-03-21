@@ -13,7 +13,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="database-test@localhost" uuid="121be494-1cca-41ba-a8f9-3d9de00fa397">
+    <data-source source="LOCAL" name="database-test@localhost" uuid="ecd54b33-a37b-4f10-9a77-6b4d35bbd375">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

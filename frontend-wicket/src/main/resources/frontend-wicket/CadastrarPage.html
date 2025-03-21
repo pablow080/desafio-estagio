@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-br">
+<head>
+    <title>Cadastro de Cliente</title>
+</head>
+<body>
+<h1>Cadastro de Cliente</h1>
+
+<wicket:container wicket:id="form" id="cadastrarpage">
+    <form wicket:id="form">
+        <!-- Campo de Nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" wicket:id="nome" id="nome" />
+        <br />
+
+        <!-- Campo de CPF ou CNPJ -->
+        <label for="cpfCnpj">CPF/CNPJ:</label>
+        <input type="text" wicket:id="cpfCnpj" id="cpfCnpj" />
+        <br />
+
+        <!-- Botão de Submissão -->
+        <button type="submit" wicket:id="submit">Cadastrar</button>
+    </form>
+</wicket:container>
+
+<div wicket:id="feedback"></div>
+</body>
+</html>

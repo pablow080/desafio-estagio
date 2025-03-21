@@ -17,11 +17,13 @@ public class EnderecoController {
     @Autowired
     private EnderecoService enderecoService;
 
+    // Listar todos os endereços
     @GetMapping
     public List<Endereco> listarTodos() {
         return enderecoService.listarTodos();
     }
 
+    // Buscar endereço por ID
     @GetMapping("/{id}")
     public ResponseEntity<Endereco> buscarPorId(@PathVariable Long id) {
         return enderecoService.buscarPorId(id)
@@ -29,15 +31,17 @@ public class EnderecoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // Salvar um novo endereço
     @PostMapping
     public ResponseEntity<Endereco> salvar(@RequestBody @Valid Endereco endereco) {
         Endereco salvo = enderecoService.salvar(endereco);
-        return ResponseEntity.status(201).body(salvo); // Retorna o status 201 e o objeto salvo
+        return ResponseEntity.status(201).body(salvo); // Retorna status 201 e o objeto salvo
     }
 
+    // Excluir um endereço
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
-        enderecoService.excluir(id);
-        return ResponseEntity.noContent().build(); // Retorna o status 204 (No Content)
+    public ResponseEntity<Void> excluirEndereco(@PathVariable Long id) {
+        enderecoService.excluirEndereco(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -5,8 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
-import java.util.List;
-
+import java.util.Set;
 
 @Setter
 @Getter
@@ -20,7 +19,7 @@ public class Cliente {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    public TipoPessoa tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
     @Column(unique = true, nullable = false)
     @NotNull
@@ -30,15 +29,12 @@ public class Cliente {
     @NotNull
     @Size(min = 3, max = 100)
     private String nome;
-
     private String rg;
-
     private LocalDate dataNascimento;
-
     private String razaoSocial;
-
     private String inscricaoEstadual;
 
+    @Column(nullable = false, updatable = false)
     private LocalDate dataCriacao;
 
     @Email
@@ -47,7 +43,7 @@ public class Cliente {
     private boolean ativo;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Endereco> enderecos;
+    private Set<Endereco> enderecos;
 
     @PrePersist
     private void prePersist() {
