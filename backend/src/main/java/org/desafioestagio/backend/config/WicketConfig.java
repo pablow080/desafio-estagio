@@ -1,11 +1,9 @@
 package org.desafioestagio.backend.config;
 
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.spring.SpringWebApplicationFactory;
 import org.apache.wicket.protocol.http.WicketFilter;
-import org.apache.wicket.protocol.http.WicketServlet;
-import org.apache.wicket.spring.SpringWebApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,27 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class WicketConfig {
 
     @Bean
-    public ServletRegistrationBean<WicketServlet> wicketServlet() {
-        ServletRegistrationBean<WicketServlet> servlet = new ServletRegistrationBean<>(new WicketServlet(), "/wicket/*");
-        servlet.setLoadOnStartup(1);
-        return servlet;
+    public FilterRegistrationBean<WicketFilter> wicketFilter(WebApplication wicketApplication) {
+        WicketFilter filter = new WicketFilter(wicketApplication);
+
+        FilterRegistrationBean<WicketFilter> registration = new FilterRegistrationBean<>();
+        registration.setFilter(filter);
+        registration.addUrlPatterns("/*");
+        registration.setName("wicket-filter");
+        return registration;
     }
 
-    @Bean
-    public FilterRegistrationBean<WicketFilter> wicketFilter() {
-        FilterRegistrationBean<WicketFilter> filter = new FilterRegistrationBean<>();
-        filter.setFilter(new WicketFilter());
-        filter.addUrlPatterns("/wicket/*");
-        return filter;
-    }
-
-    @Bean
-    public <SpringWebApplication> SpringWebApplication springWebApplication() {
-        return new SpringWebApplication() {
-            @Override
-            public Class<? extends WebPage> getHomePage() {
-                return IndexPage.class;
-            }
-        };
-    }
+    //@Bean
+    //public WebApplication wicketApplication() {
+       // return new WicketApplication();
+   // }
 }

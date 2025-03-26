@@ -8,12 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="backend" />
-        <module name="wicket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-backend" target="17" />
       <module name="springboot" target="17" />
+      <module name="wicket" target="17" />
       <module name="wicket-frontend" target="17" />
     </bytecodeTargetLevel>
   </component>
