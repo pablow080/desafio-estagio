@@ -31,6 +31,48 @@ public class EnderecoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // Buscar endereço por nome do cliente
+    @GetMapping("/nome/{nome}")
+    public List<Endereco> buscarPorNomeCliente(@PathVariable String nome) {
+        return enderecoService.buscarPorNomeCliente(nome);
+    }
+
+    // Buscar endereço por razão social do cliente (CNPJ)
+    @GetMapping("/razao-social/{razaoSocial}")
+    public List<Endereco> buscarPorRazaoSocialCliente(@PathVariable String razaoSocial) {
+        return enderecoService.buscarPorRazaoSocialCliente(razaoSocial);
+    }
+
+    // Buscar endereço por CEP
+    @GetMapping("/cep/{cep}")
+    public List<Endereco> buscarPorCep(@PathVariable String cep) {
+        return enderecoService.buscarPorCep(cep);
+    }
+
+    // Buscar endereço por email do cliente
+    @GetMapping("/email/{email}")
+    public List<Endereco> buscarPorEmailCliente(@PathVariable String email) {
+        return enderecoService.buscarPorEmailCliente(email);
+    }
+
+    // Buscar endereço por telefone do cliente
+    @GetMapping("/telefone/{telefone}")
+    public List<Endereco> buscarPorTelefone(@PathVariable String telefone) {
+        return enderecoService.buscarPorTelefone(telefone);
+    }
+
+    // Buscar endereço por nome do cliente e CEP
+    @GetMapping("/nome-cep")
+    public List<Endereco> buscarPorNomeECEP(@RequestParam String nome, @RequestParam String cep) {
+        return enderecoService.buscarPorNomeECEP(nome, cep);
+    }
+
+    // Buscar endereço por nome do cliente e telefone
+    @GetMapping("/nome-telefone")
+    public List<Endereco> buscarPorNomeETelefone(@RequestParam String nome, @RequestParam String telefone) {
+        return enderecoService.buscarPorNomeETelefone(nome, telefone);
+    }
+
     // Salvar um novo endereço
     @PostMapping
     public ResponseEntity<Endereco> salvar(@RequestBody @Valid Endereco endereco) {

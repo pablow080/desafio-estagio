@@ -2,6 +2,66 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="jaspersoft-third-party" />
+      <option name="name" value="jaspersoft-third-party" />
+      <option name="url" value="https://repo.jaspersoft.com/jaspersoft/third-party-ce-artifacts/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-wicket" />
+      <option name="name" value="apache-wicket" />
+      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="wicket-repo" />
+      <option name="name" value="wicket-repo" />
+      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jaspersoft-repo" />
+      <option name="name" value="jaspersoft-repo" />
+      <option name="url" value="https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="my-repo" />
+      <option name="name" value="my-repo" />
+      <option name="url" value="https://my-repository.com/repository/maven-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-repo" />
+      <option name="name" value="spring-repo" />
+      <option name="url" value="https://repo.spring.io/release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="local-repo" />
+      <option name="name" value="local-repo" />
+      <option name="url" value="file://C:\Users\unika-dev\desafio-estagio\wicket/target/repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-repo" />
+      <option name="name" value="spring-repo" />
+      <option name="url" value="https://repo.spring.io/plugins-release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-repo" />
+      <option name="name" value="apache-repo" />
+      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jaspersoft-repo" />
       <option name="name" value="jaspersoft-repo" />
       <option name="url" value="https://repository.jaspersoft.com" />
@@ -27,11 +87,6 @@
       <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="jaspersoft-third-party" />
-      <option name="name" value="jaspersoft-third-party" />
-      <option name="url" value="https://repo.jaspersoft.com/jaspersoft/third-party-ce-artifacts/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
@@ -42,19 +97,14 @@
       <option name="url" value="https://repository.apache.org/snapshots/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="apache-wicket" />
-      <option name="name" value="apache-wicket" />
-      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="itext-repo" />
       <option name="name" value="itext-repo" />
       <option name="url" value="https://maven.itextpdf.com/maven2" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="jaspersoft-repo" />
-      <option name="name" value="jaspersoft-repo" />
-      <option name="url" value="https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" />
+      <option name="id" value="apache-wicket-repo" />
+      <option name="name" value="apache-wicket-repo" />
+      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jfrog-repo" />
@@ -62,34 +112,9 @@
       <option name="url" value="https://jfrog.com/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="jcenter" />
-      <option name="name" value="jcenter" />
-      <option name="url" value="https://jcenter.bintray.com/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="spring-repo" />
-      <option name="name" value="spring-repo" />
-      <option name="url" value="https://repo.spring.io/release" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="central" />
-      <option name="name" value="central" />
-      <option name="url" value="https://repo.maven.apache.org/maven2" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="jr-ce-releases" />
       <option name="name" value="jr-ce-releases" />
       <option name="url" value="https://repo.jaspersoft.com/jaspersoft/jr-ce-releases/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="apache-repo" />
-      <option name="name" value="apache-repo" />
-      <option name="url" value="https://repository.apache.org/content/repositories/releases/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="jboss.community" />
-      <option name="name" value="JBoss Community repository" />
-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />

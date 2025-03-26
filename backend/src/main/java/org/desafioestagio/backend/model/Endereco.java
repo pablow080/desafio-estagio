@@ -2,6 +2,7 @@ package org.desafioestagio.backend.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,21 +24,23 @@ public class Endereco {
     private String numero;
 
     @NotBlank(message = "CEP é obrigatório")
-    @Size(min = 8, max = 8, message = "CEP deve ter 8 caracteres")
+    @Pattern(regexp = "\\d{8}", message = "CEP deve conter exatamente 8 dígitos numéricos")
     private String cep;
 
     @NotBlank(message = "Bairro é obrigatório")
     private String bairro;
 
+    @Pattern(regexp = "\\d{10,11}", message = "Telefone deve conter 10 ou 11 dígitos")
     private String telefone;
 
     @NotBlank(message = "Cidade é obrigatória")
     private String cidade;
 
     @NotBlank(message = "Estado é obrigatório")
+    @Size(min = 2, max = 2, message = "Estado deve ter 2 caracteres (UF)")
     private String estado;
 
-    private boolean enderecoPrincipal;
+    private boolean enderecoPrincipal = false;
 
     private String complemento;
 

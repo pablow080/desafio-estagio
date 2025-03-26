@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/desafio-estagio.iml" filepath="$PROJECT_DIR$/desafio-estagio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wicket/wicket.iml" filepath="$PROJECT_DIR$/wicket/wicket.iml" />
     </modules>
   </component>
 </project>
