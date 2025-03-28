@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Cliente</title>
+</head>
+<body>
+
+<h1>Editar Cliente</h1>
+
+<!-- Formulário de Edição -->
+<form wicket:id="form">
+    <div>
+        <label for="nome">Nome:</label>
+        <input wicket:id="nome" type="text" id="nome" placeholder="Nome do Cliente" required />
+    </div>
+    <div>
+        <label for="cpfCnpj">CPF/CNPJ:</label>
+        <input wicket:id="cpfCnpj" type="text" id="cpfCnpj" placeholder="CPF ou CNPJ" required />
+    </div>
+
+    <button wicket:id="saveButton">Salvar</button>
+    <button wicket:id="cancelButton">Cancelar</button>
+</form>
+
+</body>
+</html>

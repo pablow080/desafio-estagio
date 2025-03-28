@@ -14,10 +14,12 @@
         <option value="$PROJECT_DIR$/java-backend/pom.xml" />
         <option value="$PROJECT_DIR$/backend/pom.xml" />
         <option value="$PROJECT_DIR$/wicket/pom.xml" />
+        <option value="$PROJECT_DIR$/Common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Common/pom.xml" />
         <option value="$PROJECT_DIR$/java-backend/pom.xml" />
         <option value="$PROJECT_DIR$/wicket-frontend/pom.xml" />
         <option value="$PROJECT_DIR$/wicket/pom.xml" />
@@ -27,6 +29,10 @@
   <component name="PWA">
     <option name="enabled" value="true" />
     <option name="wasEnabledAtLeastOnce" value="true" />
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://jakarta.ee/xml/ns/javaee" location="$PROJECT_DIR$/wicket/src/main/webapp/WEB-INF/web.xml" />
+    <resource url="http://jakarta.ee/xml/ns/javaee/web-app_5_0.xsd" location="$PROJECT_DIR$/wicket/src/main/webapp/WEB-INF/web.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_23" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

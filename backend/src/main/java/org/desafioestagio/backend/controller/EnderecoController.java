@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/enderecos")
@@ -26,10 +27,11 @@ public class EnderecoController {
     // Buscar endereço por ID
     @GetMapping("/{id}")
     public ResponseEntity<Endereco> buscarPorId(@PathVariable Long id) {
-        return enderecoService.buscarPorId(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        Optional<Endereco> endereco = Optional.ofNullable(enderecoService.buscarPorId(id));
+        return endereco.map(ResponseEntity::ok)  // Usando map no Optional
+                .orElseGet(() -> ResponseEntity.notFound().build());  // Usando orElseGet para retornar 404
     }
+
 
     // Buscar endereço por nome do cliente
     @GetMapping("/nome/{nome}")
@@ -45,7 +47,7 @@ public class EnderecoController {
 
     // Buscar endereço por CEP
     @GetMapping("/cep/{cep}")
-    public List<Endereco> buscarPorCep(@PathVariable String cep) {
+    public Optional<Endereco> buscarPorCep(@PathVariable String cep) {
         return enderecoService.buscarPorCep(cep);
     }
 

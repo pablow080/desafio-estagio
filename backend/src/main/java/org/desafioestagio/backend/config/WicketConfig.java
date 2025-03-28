@@ -1,28 +1,32 @@
 package org.desafioestagio.backend.config;
 
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.SpringWebApplicationFactory;
 import org.apache.wicket.protocol.http.WicketFilter;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+package org.desafioestagio.wicket;
+
 
 @Configuration
-public class WicketConfig {
+@Order(1)
+public class WicketConfig extends SpringBootServletInitializer {
 
-    @Bean
-    public FilterRegistrationBean<WicketFilter> wicketFilter(WebApplication wicketApplication) {
-        WicketFilter filter = new WicketFilter(wicketApplication);
-
-        FilterRegistrationBean<WicketFilter> registration = new FilterRegistrationBean<>();
-        registration.setFilter(filter);
-        registration.addUrlPatterns("/*");
-        registration.setName("wicket-filter");
-        return registration;
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(WicketApplication.class);  // Inicia WicketApplication
     }
 
-    //@Bean
-    //public WebApplication wicketApplication() {
-       // return new WicketApplication();
-   // }
+    @Bean
+    public FilterRegistrationBean<WicketFilter> wicketFilter() {
+        FilterRegistrationBean<WicketFilter> registration = new FilterRegistrationBean<>();
+        registration.setFilter(new WicketFilter());
+        registration.addUrlPatterns("/wicket/*");  // Filtra para URLs do Wicket
+        registration.addInitParameter("applicationClassName", "org.desafioestagio.WicketApplication");
+        registration.setName("WicketFilter");
+        registration.setOrder(1);
+        return registration;
+    }
 }

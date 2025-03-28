@@ -5,34 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="228c6dc8-1b1f-4dc3-90d4-149f1d2f28a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/BackendApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/DataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/validations/ValidacaoUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/validations/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/org/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/template/CadastroPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/template/ClienteEditPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/template/ClienteListPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/template/HomePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/CadastroPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/ClienteEditPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/ClienteListPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/EnderecoListPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/page/RelatoriosPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/wicket/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/688afc2f-f709-46b0-b5b4-cfc0f49ac4ce/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecd54b33-a37b-4f10-9a77-6b4d35bbd375.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ecd54b33-a37b-4f10-9a77-6b4d35bbd375.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/CustomWicketFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/BackendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/WicketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/config/WicketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/EnderecoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/controller/advice/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/src/main/java/org/desafioestagio/wicket/WicketApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/src/main/java/org/desafioestagio/wicket/pages/IndexPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/src/main/resources/pages/IndexPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/classes/pages/IndexPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/wicket-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/target/wicket-3.1.0.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wicket/wicket.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/TipoPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/model/TipoPessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/EnderecoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/repository/EnderecoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/EnderecoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/backend/service/EnderecoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +57,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -86,9 +100,12 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Main.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
     "JAR Application.Unnamed.executor": "Debug",
     "JAR Application.java-backend-0.0.1-SNAPSHOT.jar.executor": "Debug",
+    "JUnit.All in desafio-estagio (1).executor": "Run",
+    "JUnit.All in desafio-estagio.executor": "Debug",
     "JUnit.All in wicket.executor": "Debug",
     "JUnit.ClienteControllerTest.testCriarCliente.executor": "Debug",
     "JUnit.ClienteControllerTest.testCriarClientePessoaFisicaComEndereco.executor": "Run",
@@ -100,6 +117,7 @@
     "JUnit.EnderecoServiceTest.testExcluirEndereco.executor": "Debug",
     "JUnit.ExcelExportServiceTest.testExportarClientesParaExcel.executor": "Debug",
     "JUnit.SimpleTest.executor": "Debug",
+    "JavaScript Debug.ClienteEditPage.html.executor": "Debug",
     "JavaScript Debug.app.component.html.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.Unknown [clean,-DforkCount=0...].executor": "Debug",
@@ -111,6 +129,8 @@
     "Maven.backend [compile].executor": "Run",
     "Maven.backend [install,-DforkCount=0...].executor": "Debug",
     "Maven.backend [install].executor": "Run",
+    "Maven.backend [jetty:run,-DforkCount=0...].executor": "Debug",
+    "Maven.backend [jetty:run].executor": "Run",
     "Maven.backend [package,-DforkCount=0...].executor": "Debug",
     "Maven.backend [package].executor": "Run",
     "Maven.backend [site,-DforkCount=0...].executor": "Debug",
@@ -138,6 +158,8 @@
     "Maven.wicket [compile].executor": "Run",
     "Maven.wicket [install,-DforkCount=0...].executor": "Debug",
     "Maven.wicket [install].executor": "Run",
+    "Maven.wicket [jetty:run,-DforkCount=0...].executor": "Debug",
+    "Maven.wicket [jetty:run].executor": "Run",
     "Maven.wicket [package,-DforkCount=0...].executor": "Debug",
     "Maven.wicket [package].executor": "Run",
     "Maven.wicket [test,-DforkCount=0...].executor": "Debug",
@@ -166,7 +188,7 @@
     "java.suggest.annotation.dependency": "false",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/unika-dev/desafio-estagio/java-backend/src/test/java",
-    "last_opened_file_path": "C:/Users/unika-dev/desafio-estagio/wicket",
+    "last_opened_file_path": "C:/Users/unika-dev/desafio-estagio/wicket/src/main/webapp/WEB-INF/web.xml",
     "mysql-explain.enableMySQLExplain": "true",
     "mysql-explain.existMysqlJar": "true",
     "node.js.detected.package.eslint": "true",
@@ -174,12 +196,12 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/unika-dev/desafio-estagio/wicket/src/main/java/org/desafio-estagio/Main.java",
+    "onboarding.tips.debug.path": "C:/Users/unika-dev/desafio-estagio/backend/wicket/src/main/java/org/desafioestagio/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.externalResources",
     "ts.external.directory.path": "C:\\Users\\unika-dev\\desafio-estagio\\angular-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -206,13 +228,17 @@
       <recent name="C:\Users\unika-dev\desafio-estagio\java-backend\src\test\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main\java" />
-      <recent name="C:\Users\unika-dev\desafio-estagio\wicket\src\main" />
-      <recent name="C:\Users\unika-dev\desafio-estagio\wicket\src\main\resources\wicket" />
-      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main\resources\org\desafioestagio\wicket" />
-      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src" />
+      <recent name="C:\Users\unika-dev\desafio-estagio\backend\wicket" />
+      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main" />
+      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main\java\org" />
+      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main\resources" />
+      <recent name="C:\Users\unika-dev\desafio-estagio\backend\src\main\java\org\desafioestagio\wicket\page" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.desafioestagio.wicket.Controller" />
+      <recent name="org.desafioestagio.backend.config" />
+      <recent name="" />
+      <recent name="org.desafioestagio.backend" />
       <recent name="org.desafioestagio.wicket" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -220,9 +246,30 @@
       <recent name="org.desafioestagio.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
-    <configuration name="All in wicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JavaScript Debug.ClienteEditPage.html">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.desafioestagio.Main" />
       <module name="wicket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.desafioestagio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in desafio-estagio (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="desafio-estagio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in desafio-estagio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="desafio-estagio" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
@@ -234,6 +281,9 @@
       <option name="WORKING_DIRECTORY" value="C:\Users\unika-dev\desafio-estagio" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="backend" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ClienteEditPage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/desafio-estagio/backend/src/main/resources/template/ClienteEditPage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -258,15 +308,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.Unnamed" />
-      <item itemvalue="JUnit.All in wicket" />
+      <item itemvalue="JavaScript Debug.ClienteEditPage.html" />
+      <item itemvalue="JUnit.All in desafio-estagio" />
+      <item itemvalue="JUnit.All in desafio-estagio (1)" />
       <item itemvalue="Spring Boot.BackendApplication" />
       <item itemvalue="Spring Boot.WicketApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.ClienteEditPage.html" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Spring Boot.WicketApplication" />
-        <item itemvalue="JUnit.All in wicket" />
+        <item itemvalue="JUnit.All in desafio-estagio (1)" />
+        <item itemvalue="JUnit.All in desafio-estagio" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +370,10 @@
       <workItem from="1742825362338" duration="10273000" />
       <workItem from="1742900428479" duration="21571000" />
       <workItem from="1742986832174" duration="507000" />
-      <workItem from="1742987349577" duration="4222000" />
+      <workItem from="1742987349577" duration="20990000" />
+      <workItem from="1743072966655" duration="4339000" />
+      <workItem from="1743077327276" duration="17470000" />
+      <workItem from="1743159351957" duration="9208000" />
     </task>
     <servers />
   </component>
@@ -325,9 +384,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/wicket/src/main/java/org/desafio-estagio/Main.java</url>
+          <url>file://$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/wicket/src/main/java/org/desafio-estagio/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/org/desafioestagio/wicket/src/main/java/org/desafioestagio/wicket/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Common/src/main/java/org/desafioestagio/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

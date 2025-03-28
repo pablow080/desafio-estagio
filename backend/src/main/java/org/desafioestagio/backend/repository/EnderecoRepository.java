@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
@@ -38,5 +39,5 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
     List<Endereco> findByClienteNomeContainingIgnoreCaseAndTelefone(String nome, String telefone);
 
     // Método para buscar endereços pelo CEP
-    List<Endereco> findByCep(String cep);
+    Optional<Endereco> findByCep(String cep);
 }

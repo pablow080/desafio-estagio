@@ -1,4 +1,4 @@
-package org.desafioestagio.backend.controller;
+package org.desafioestagio.backend.controller.advice;
 
 import org.desafioestagio.backend.exception.ClienteJaCadastradoException;
 import org.desafioestagio.backend.exception.ClienteNaoEncontradoException;
